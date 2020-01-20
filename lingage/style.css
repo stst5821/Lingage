@@ -252,8 +252,8 @@ HTMLのスタイル
 
 .chara_Monthly {
   position: relative;
-  max-width: 310px;
-  height: 90px;
+  max-width: auto;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,6 +326,12 @@ HTMLのスタイル
   margin: 1rem 0;
   font-size: 1.4rem;
   line-height: 2.4rem;
+}
+
+@media (max-width: 960px) {
+  .sidebar_main {
+    display: none;
+  }
 }
 
 .sidebar_main h3 {
@@ -435,13 +441,19 @@ HTMLのスタイル
 
 .contents {
   max-width: 1120px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .contents_main {
-  width: 745px;
   margin-left: 2rem;
+}
+
+@media (max-width: 960px) {
+  .contents_main {
+    margin: 0 auto;
+  }
 }
 
 .contents_guide {
@@ -455,7 +467,6 @@ HTMLのスタイル
 }
 
 .contents_container {
-  max-width: 745px;
   list-style: none;
 }
 

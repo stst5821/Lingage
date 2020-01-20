@@ -126,6 +126,7 @@ colのpadding削除
 ============================================*/
 
 $pc: 1024px; // PC
+$pc_m:960px; // PC_middium
 $sp: 768px;  // スマホ
 
 @mixin pc {
@@ -133,6 +134,13 @@ $sp: 768px;  // スマホ
     @content;
   }
 }
+
+@mixin pc_m {
+    @media (max-width: ($pc_m)) {
+      @content;
+    }
+}
+
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
@@ -257,8 +265,8 @@ HTMLのスタイル
 
 .chara_Monthly {
     position: relative;
-    max-width: 310px;
-    height: 90px;
+    max-width: auto;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -324,6 +332,12 @@ HTMLのスタイル
 }
 
 // <!-- contents -->
+
+.sidebar_main {
+    @include pc_m {
+        display: none;
+      };
+}
 
 .sidebar_main h3 {
     font-size: 1.8em;
@@ -419,13 +433,17 @@ HTMLのスタイル
 
 .contents {
     max-width: 1120px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .contents_main {
-    width: 745px;
     margin-left: 2rem;
+
+    @include pc_m {
+        margin: 0 auto;
+      };
 }
 
 .contents_guide {
@@ -436,9 +454,8 @@ HTMLのスタイル
 }
 
 .contents_container {
-    max-width: 745px;
+    // max-width: 745px;
     list-style: none;
-    
     li {
         width: 32%;
         margin: 0 1% 12px 0;
