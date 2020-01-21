@@ -221,6 +221,12 @@ HTMLのスタイル
   max-width: 2000px;
 }
 
+@media (max-width: 767px) {
+  .main_img {
+    margin: 3rem;
+  }
+}
+
 .main_img img {
   width: 100%;
 }
@@ -250,6 +256,13 @@ HTMLのスタイル
   font-weight: 700;
 }
 
+@media (max-width: 767px) {
+  .chara_row {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
 .chara_Monthly {
   position: relative;
   max-width: auto;
@@ -264,7 +277,7 @@ HTMLのスタイル
       -ms-flex-pack: center;
           justify-content: center;
   background-image: url(img/btn_tokucyou_on.png);
-  background-size: contain;
+  background-size: 95% 100%;
   background-repeat: no-repeat;
   font-size: 1.8rem;
 }
@@ -275,6 +288,18 @@ HTMLのスタイル
   font-weight: 700;
   text-align: center;
   line-height: 2.5rem;
+}
+
+@media (max-width: 960px) {
+  .chara_Monthly p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .chara_Monthly p {
+    font-size: 1.4rem;
+  }
 }
 
 .chara_after1:after {
@@ -320,6 +345,18 @@ HTMLのスタイル
 .chara_pink-text {
   color: #ff679a;
   font-size: 1.8rem;
+}
+
+@media (max-width: 960px) {
+  .chara_pink-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .chara_pink-text {
+    font-size: 2rem;
+  }
 }
 
 .chara_txt {
@@ -453,6 +490,7 @@ HTMLのスタイル
 @media (max-width: 960px) {
   .contents_main {
     margin: 0 auto;
+    padding: 0 3rem;
   }
 }
 
@@ -489,23 +527,27 @@ HTMLのスタイル
 }
 
 .contents_bnr {
-  max-width: 745px;
+  max-width: 100%;
   padding-bottom: 2rem;
+}
+
+.contents_bnr .contens_evt {
+  padding-right: 1rem;
 }
 
 .contents_bnr .contens_evt img {
   margin-right: 1.5rem;
-  width: 480px;
+  width: 98%;
   height: 140px;
 }
 
 .contents_bnr .contens_column img {
-  width: 240px;
+  width: 100%;
   height: 140px;
 }
 
 .contents_bnrs {
-  max-width: 745px;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -519,11 +561,15 @@ HTMLのスタイル
 }
 
 .contents_bnr-left img {
-  width: 235px;
+  width: auto;
 }
 
 .contents_bnr-rgt-btm {
-  max-width: 500px;
+  max-width: 100%;
+}
+
+.contents_bnr-rgt-btm .contents_bnr-top {
+  margin-bottom: 2rem;
 }
 
 .contents_staff {
@@ -531,15 +577,15 @@ HTMLのスタイル
 }
 
 .contents_staff img {
-  max-width: 240px;
+  max-width: 100%;
 }
 
 .contents_voice img {
-  width: 250px;
+  max-width: 100%;
 }
 
 .contents_class img {
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .contents_merit-wrapper {

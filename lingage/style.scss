@@ -127,7 +127,7 @@ colのpadding削除
 
 $pc: 1024px; // PC
 $pc_m:960px; // PC_middium
-$sp: 768px;  // スマホ
+$sp: 767px;  // スマホ
 
 @mixin pc {
   @media (max-width: ($pc)) {
@@ -215,7 +215,6 @@ HTMLのスタイル
         font-size: 1.5rem;
         list-style: none;
         justify-content: center;
-        
     }
     li {
         padding: 0 2rem;
@@ -231,6 +230,11 @@ HTMLのスタイル
 
 .main_img {
     max-width: 2000px;
+
+    @include sp {
+        margin: 3rem;
+    };
+
     img {
     width: 100%;
     }
@@ -260,7 +264,14 @@ HTMLのスタイル
     h2 {
         font-size: 2.7rem;
         font-weight: 700;
-    }
+        }
+}
+
+.chara_row {
+    @include sp {
+        width: 60%;
+        margin: 0 auto;
+    };
 }
 
 .chara_Monthly {
@@ -271,7 +282,7 @@ HTMLのスタイル
     align-items: center;
     justify-content: center;
     background-image: url(img/btn_tokucyou_on.png);
-    background-size: contain;
+    background-size: 95% 100%;
     background-repeat: no-repeat;
     font-size: 1.8rem;
     p {
@@ -280,6 +291,14 @@ HTMLのスタイル
         font-weight: 700;
         text-align: center;
         line-height: 2.5rem;
+
+        @include pc_m {
+            font-size: 1.1rem;
+        };
+
+        @include sp {
+            font-size: 1.4rem;
+        };
     }
 }
 
@@ -323,6 +342,14 @@ HTMLのスタイル
 .chara_pink-text {
     color: #ff679a;
     font-size: 1.8rem;
+
+    @include pc_m {
+        font-size: 1.4rem;
+    };
+
+    @include sp {
+        font-size: 2rem;
+    };
 }
 
 .chara_txt {
@@ -443,6 +470,7 @@ HTMLのスタイル
 
     @include pc_m {
         margin: 0 auto;
+        padding: 0 3rem;
       };
 }
 
@@ -476,25 +504,26 @@ HTMLのスタイル
 }
 
 .contents_bnr {
-    max-width: 745px;
+    max-width: 100%;
     padding-bottom: 2rem;
     .contens_evt {
-        img {
+        padding-right: 1rem;
+    img {
         margin-right: 1.5rem;
-        width: 480px;
+        width: 98%;
         height: 140px;
-    }
+        }
 }
     .contens_column {
     img {
-        width: 240px;
+        width: 100%;
         height: 140px;
         }
     }
 } // contents_bnr
 
 .contents_bnrs {
-    max-width: 745px;
+    max-width: 100%;
     display: flex;
     align-items: stretch;
 }
@@ -502,27 +531,30 @@ HTMLのスタイル
 .contents_bnr-left {
     padding-right: 1rem;
     img {
-        width: 235px;
+        width: auto;
     }
 }
 
 .contents_bnr-rgt-btm {
-    max-width: 500px;
+    max-width: 100%;
+    .contents_bnr-top {
+        margin-bottom: 2rem;
+    }
 }
 .contents_staff {
     padding-right: 1rem;
     img {
-        max-width: 240px;
+        max-width: 100%;
     }
 }
 .contents_voice {
     img {
-        width: 250px;
+        max-width: 100%;
     }
 }
 .contents_class {
     img {
-        max-width: 500px;
+        max-width: 100%;
     }
 }
 
