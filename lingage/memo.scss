@@ -1,0 +1,33 @@
+/*============================================
+レスポンシブ・文字サイズ
+============================================*/
+
+$pc: 1024px; // PC
+$pc_m:960px; // PC_middium
+$sp: 767px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin pc_m {
+    @media (max-width: ($pc_m)) {
+      @content;
+    }
+}
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@include pc_m {
+  
+};
+
+@include sp {
+
+};

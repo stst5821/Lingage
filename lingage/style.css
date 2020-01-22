@@ -470,10 +470,94 @@ HTMLのスタイル
 
 .sidebar_img {
   margin-bottom: 3rem;
+  max-width: 240px;
+}
+
+@media (max-width: 960px) {
+  .sidebar_img {
+    margin-right: 1rem;
+  }
 }
 
 .sidebar_img img {
-  width: 240px;
+  width: 100%;
+}
+
+.sidebar_main-sp {
+  display: none;
+  width: 91%;
+  margin: 0 auto;
+}
+
+.sidebar_main-sp h3 {
+  font-size: 1.8em;
+  text-align: center;
+  color: #fff;
+  margin: 1rem 0 3rem 0;
+  position: relative;
+  /* 指定した分だけ相対的に移動 */
+  padding: 10px;
+  /* テキストの前後の余白 */
+  background-color: rgba(153, 153, 153, 0.5);
+  /* 背景色（透明度） */
+  width: 98%;
+  /* 吹き出し全体の幅 */
+  left: 50%;
+  /* 表示位置 */
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  /* 表示位置の調整 */
+}
+
+.sidebar_main-sp h3:before {
+  border-top: 12px solid rgba(153, 153, 153, 0.5);
+  /* 吹き出し口の高さ・色 */
+  border-left: 20px solid transparent;
+  /* 吹き出し口の幅１／２ */
+  bottom: -12px;
+  /* 吹き出し口の位置調整 */
+  left: 10%;
+  /* 吹き出し口の横位置 */
+  content: "";
+  /* コンテンツの挿入 */
+  position: absolute;
+  /* 親要素を基準 */
+}
+
+.sidebar_main-sp h3:after {
+  position: absolute;
+  content: "";
+  width: 67px;
+  height: 34px;
+  top: 24px;
+  right: 8px;
+  background: url(img/tit-side-information.png) no-repeat;
+  background-size: 67px 34px;
+}
+
+@media (max-width: 960px) {
+  .sidebar_main-sp {
+    display: block;
+  }
+  .sidebar_main-sp .sidebar_info-cont {
+    margin: 0 0 0 2rem;
+    width: 100%;
+  }
+}
+
+.sidebar_wrapper-pcm {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .sidebar_wrapper-pcm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .contents {
@@ -546,26 +630,18 @@ HTMLのスタイル
   height: 140px;
 }
 
-.contents_bnrs {
-  max-width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
-
 .contents_bnr-left {
   padding-right: 1rem;
+  width: 100%;
 }
 
 .contents_bnr-left img {
-  width: auto;
+  max-width: 100%;
+  min-height: 100%;
 }
 
 .contents_bnr-rgt-btm {
-  max-width: 100%;
+  width: 100%;
 }
 
 .contents_bnr-rgt-btm .contents_bnr-top {
@@ -665,7 +741,13 @@ HTMLのスタイル
 }
 
 .swiper-container {
-  width: 1000px;
+  width: 85%;
+}
+
+@media (max-width: 767px) {
+  .swiper-container {
+    width: 80%;
+  }
 }
 
 .swiper-slide {
@@ -778,15 +860,24 @@ HTMLのスタイル
 
 .event_banner {
   padding: 6rem 0 3rem 0;
+  text-align: center;
 }
 
-.event_banner {
-  text-align: center;
+@media (max-width: 767px) {
+  .event_banner {
+    display: none;
+  }
 }
 
 .event_photo img {
   max-width: 1200px;
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .event_photo img {
+    display: none;
+  }
 }
 
 .event_free {
@@ -797,6 +888,12 @@ HTMLのスタイル
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .event_free {
+    margin: 6rem 0 3rem 0;
+  }
 }
 
 .event_free a {
@@ -832,6 +929,12 @@ HTMLのスタイル
   -webkit-box-shadow: 0px 2px 0px #db8484;
           box-shadow: 0px 2px 0px #db8484;
   /* 影の設定 */
+}
+
+@media (max-width: 767px) {
+  .event_free a {
+    width: 91%;
+  }
 }
 
 .event_free a:hover {
