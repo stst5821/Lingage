@@ -148,6 +148,33 @@ $sp: 767px;  // スマホ
 }
 
 /*============================================
+汎用のスタイル ボタンなど
+============================================*/
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius : 5px;          /* 角丸       */
+    font-size     : 1.2rem;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 1rem 2rem;   /* 余白       */
+    background    : #eee;     /* 背景色     */
+    color         : #acacac;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 1px solid #acacac; /* 影の設定 */
+    border        : 1px solid #acacac;   /* 枠の指定 */
+    &:hover {
+        box-shadow    : none;        /* カーソル時の影消去 */
+        color         : #f0f0f0;     /* 背景色     */
+        background    : #f99;     /* 文字色     */
+        border: 1px solid #f99;
+        color: #fff;
+    }
+}
+
+/*============================================
 HTMLのスタイル
 ============================================*/
 
@@ -260,14 +287,14 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;/*最前面に*/
-    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-    max-width: 330px;/*最大幅（調整してください）*/
+    z-index: 9999; /*最前面に*/
+    width: 90%; /*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px; /*最大幅（調整してください）*/
     height: 100%;
-    background: #fff;/*背景色*/
-    transition: .3s ease-in-out;/*滑らかに表示*/
+    background: #efefef; /*背景色*/
+    transition: .3s ease-in-out; /*滑らかに表示*/
     -webkit-transform: translateX(-105%);
-    transform: translateX(-105%);/*左に隠しておく*/
+    transform: translateX(-105%); /*左に隠しておく*/
   }
   
   /*チェックが入ったらもろもろ表示*/
@@ -281,6 +308,48 @@ header {
     transform: translateX(0%);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
+
+  .nav_ttl {
+    font-size: 1.4rem;
+    margin: 2rem;
+  }
+
+  .nav_lists {
+    margin-left: 4rem;
+    
+    
+    .nav_list1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    .nav_list2 {
+        font-size: 1.3rem;
+    }
+    .nav_list3 {
+        font-size: 1.2rem;
+    }
+    .nav_list {
+        
+        li {
+        padding: 1rem 0;
+        border-top: 2px solid #ddd;
+        border-top: 1px solid #ddd;
+        line-height: 1.4rem;
+        span {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ff9999;
+            margin-top: 0.5rem;
+        }
+    }
+  }
+}
+ 
+
+  .nav_list {
+    list-style: none;
+}
 
 .header-freeActive {
     font-size: 1.6rem;
@@ -1023,10 +1092,12 @@ header {
 }
 
 .menu_bottom-up {
-        margin: 0 auto;
+        margin: 0 auto 3rem auto;
         width: 86%;
+        justify-content: center;
     li {
         width: 18%;
+        text-align: center;
         list-style: none;
         background-image: url(img/bg-footer-navi-main-list.png);
         background-repeat: no-repeat;
@@ -1046,7 +1117,20 @@ header {
     }
 }
 .menu_bottom-down {
-    justify-content: center;
+        margin: 0 auto;
+        width: 86%;
+        justify-content: center;
+    li {
+        width: 16.6%;
+        text-align: center;
+        list-style: none;
+        background-image: url(img/bg-footer-navi-main-list.png);
+        background-repeat: no-repeat;
+        background-position: right center;
+    }
+    li:nth-child(6) {
+        background-image: none;
+    }
     a {
         font-size: 1.1rem;
         padding: 1rem;
@@ -1108,27 +1192,11 @@ header {
     text-align: center;
     padding-top: 2rem;
     a {
-        display: inline-block;
-        text-decoration: none;
-        border-radius : 5px;          /* 角丸       */
-        font-size     : 1.4rem;        /* 文字サイズ */
-        text-align    : center;      /* 文字位置   */
-        cursor        : pointer;     /* カーソル   */
-        padding       : 12px 12px;   /* 余白       */
-        background    : #ffffff;     /* 背景色     */
-        color         : #000000;     /* 文字色     */
-        line-height   : 1em;         /* 1行の高さ  */
-        transition    : .3s;         /* なめらか変化 */
-        box-shadow    : 0px 1px 0px #666666;  /* 影の設定 */
-        border        : 2px solid #f0f0f0;    /* 枠の指定 */
+        background-image: url(img/footer-ico-lock.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 0.8rem 1.1rem;
     }
-    
-    a :hover {
-        box-shadow    : none;        /* カーソル時の影消去 */
-        color         : #f0f0f0;     /* 背景色     */
-        background    : #cccccc;     /* 文字色     */
-    }
-    
 }
 
 // スマホ用footer_menu
